@@ -1,0 +1,19 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|public|\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule ^vendor/(.*)?$ / [F,L]
+RewriteRule ^composer\.(lock|json)$ / [F,L]
+RewriteRule .(gitignore)$ / [F,L]
+RewriteRule .(gitattributes)$ / [F,L]
+RewriteRule .(project)$ / [F,L]
+RewriteRule ^user_guide/(.*)?$ / [F,L]
+RewriteRule ^.settings/(.*)?$ / [F,L]
+RewriteRule ^.git/(.*)?$ / [F,L]
+RewriteRule ^.vs/(.*)?$ / [F,L]
+RewriteRule ^.(buildpath)$ / [F,L]
+RewriteRule ^.(editorconfig)$ / [F,L]
+RewriteRule ^assets_backup/(.*)?$ / [F,L]
+RewriteRule ^tests/(.*)?$ / [F,L]
+
